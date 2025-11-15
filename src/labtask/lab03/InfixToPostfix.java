@@ -1,9 +1,9 @@
 package labtask.lab03;
 public class InfixToPostfix {
-    char[] infix;
-    char[] postfix;
-    char[] stack;
-    int top;
+    private char[] infix;
+    private char[] postfix;
+    private char[] stack;
+    private int top;
     InfixToPostfix(int size){
     infix=new char[size];
     postfix= new char[size];
@@ -11,7 +11,7 @@ public class InfixToPostfix {
     this.top=-1;
     }
  
-    public void push(char ch){
+    private  void push(char ch){
         if (top==stack.length-1) {
             System.out.println("STACK OVERFLOW");
         }else{
@@ -19,7 +19,7 @@ public class InfixToPostfix {
         }
     }
     
-    public char pop(){
+    private char pop(){
         if (top==-1) {
             System.out.println("STACK UNDERFLOW");
             return '\0';
@@ -27,7 +27,7 @@ public class InfixToPostfix {
         return stack[top--];
     }
     
-    public char peek(){
+    private char peek(){
         if (top==-1) {
             System.out.println("STACK IS EMPTY");
         }
@@ -35,7 +35,7 @@ public class InfixToPostfix {
         
     }
     
-    public int precedence(char chr){
+    private int precedence(char chr){
         switch(chr){
             case '^':return 3; 
             case '/':
